@@ -2,21 +2,22 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import grafos_tools as gt
 
-aristas = {
+aristas = [
+    "A75D",
     "S14A",
-    "A29B",
-    "S12D",
     "S16B",
     "S13C",
-    "B21C",
+    "S12D",
     "C29D",
+    "B21C",
+    "A27B",
     "A87E",
     "B86F",
     "C100G",
     "D75H",
-    "E24F",
+    "H23G",
     "F22G",
-    "G23H",
+    "E24F",
     "E81I",
     "F97J",
     "G83K",
@@ -24,8 +25,8 @@ aristas = {
     "I12J",
     "J131K",
     "K16L",
-    "S75L",
-}
+]
+
 
 vertices, index = gt.lista_vertices(aristas)
 aristas_ordenadas = gt.ordenar_aristas(aristas)
