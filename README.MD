@@ -1,5 +1,6 @@
 # Proyecto Aplicacion Teoria de Grafos
-**Reyes Garcia Joel**
+**Entrego:
+Reyes Garcia Joel**
 
 
 # Importante
@@ -15,7 +16,7 @@ Además, es necesario contar con las siguientes librerías de Python instaladas:
 * `matplotlib.pyplot`
 
 
-# Problema:
+# Problema 1:
 ![Problema](imagenes/problema.jpeg)
 
 
