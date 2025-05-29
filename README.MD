@@ -47,8 +47,6 @@ Este módulo contiene funciones importantes para trabajar con grafos. Sirve para
 
 A continuación se explican las funciones más importantes:
 
----
-
 ## `lista_vertices(aristas_n)`
 
 ```python
@@ -68,8 +66,6 @@ def lista_vertices(aristas_n):
 
 Esta función encuentra todos los vértices únicos del grafo a partir de la lista de aristas. Además, crea un diccionario que le asigna un número (índice) a cada vértice. Esto es útil para representar el grafo como matriz y para algoritmos como el de Kruskal.
 
----
-
 ## `ordenar_aristas(aristas_n)`
 
 ```python
@@ -81,8 +77,6 @@ def ordenar_aristas(aristas_n):
 **Funcion**
 
 Ordena las aristas de menor a mayor peso. Esto es necesario para que el algoritmo de Kruskal funcione correctamente.
-
----
 
 ## `matriz_adyacencia(aristas, vertices, indice)`
 
@@ -133,11 +127,11 @@ def dibujar_grafo(vertices, aristas):
 
 Crea un grafo a partir de los vertices y las aristas dadas.
 
-# Redultado esperado
+# Resultado esperado
 
 Se espera que el algoritmo sea capaz de obtener el sguiente arbnol de peso minimo, con un peso minimo total de 391mts
-![Resltado_Esperado](imagenes/resultado_esperado.jpeg)
 
+![Resltado_Esperado](imagenes/resultado_esperado.jpeg)
 
 # Algoritmo de Prim
 
@@ -165,7 +159,9 @@ def prim(matriz, vertices):
         peso_min += menor_peso
 
     return arbol_minimo, peso_min
+
 ``` 
+
 **Funcion**
 
 Se inicia con un path (una lista de valores booleanos) que, usando el índice de cada vértice, indica si este ya fue incluido en el árbol. Luego, el algoritmo busca repetidamente la arista de menor peso que conecta un vértice ya incluido en el árbol con uno que aún no lo está, revisando los valores de la matriz de adyacencia. Este proceso se repite n-1 veces 
@@ -226,11 +222,15 @@ Mediante la función `ordenar_aristas` se ordenan las aristas de menor a mayor p
 se añade al Arbol Generador y sus grupos se unen. Si los vértices ya están en el mismo grupo, la arista se descarta para evitar ciclos. Finalmente, la función devuelve las aristas del arbol y su peso total.
 
 ## Resultados:
+
 Al usar este programa se obtiene:
 ![Resultados_Kruskal](imagenes/kruskal_grafo_01.png)
 El cual conicide con el resultado esperado.
 
 # Problema 2:
+
 ![Problema_2](imagenes/problema_2.png)
+
 ## Respuesta:
+
 ![Respuesta](imagenes/problema_2_respuesta.jpeg)
