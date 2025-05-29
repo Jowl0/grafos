@@ -133,6 +133,12 @@ def dibujar_grafo(vertices, aristas):
 
 Crea un grafo a partir de los vertices y las aristas dadas.
 
+# Redultado esperado
+
+Se espera que el algoritmo sea capaz de obtener el sguiente arbnol de peso minimo, con un peso minimo total de 391mts
+![Resltado_Esperado](imagenes/resultado_esperado.jpeg)
+
+
 # Algoritmo de Prim
 
 ```python
@@ -166,6 +172,8 @@ Se inicia con un path (una lista de valores booleanos) que, usando el índice de
 
 ## Resultados
 
-Al usar el codigo creado en 'prim.py' se obtiene el siguente grafo:
+Al usar el codigo creado en `prim.py` se obtiene el siguente grafo:
 ![Grafo_Prim](imagenes/prim_grafo_01.png)
+
+El cual coincide con el resultado esperado tanto el peso  minimo como el arbol de peso minimo.
 
