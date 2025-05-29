@@ -168,12 +168,64 @@ def prim(matriz, vertices):
 ``` 
 **Funcion**
 
-Se inicia con un path (una lista de valores booleanos) que, usando el índice de cada vértice, indica si este ya fue incluido en el árbol. Luego, el algoritmo busca repetidamente la arista de menor peso que conecta un vértice ya incluido en el árbol con uno que aún no lo está, revisando los valores de la matriz de adyacencia. Este proceso se repite n-1 veces (siendo n el número de vértices), pues es la cantidad exacta de aristas que un Árbol Generador Mínimo siempre contiene. Finalmente, se calcula y se devuelve al usuario el peso total de las aristas que forman el Árbol Generador Mínimo, junto con la lista de dichas aristas
+Se inicia con un path (una lista de valores booleanos) que, usando el índice de cada vértice, indica si este ya fue incluido en el árbol. Luego, el algoritmo busca repetidamente la arista de menor peso que conecta un vértice ya incluido en el árbol con uno que aún no lo está, revisando los valores de la matriz de adyacencia. Este proceso se repite n-1 veces 
+(siendo n el número de vértices), pues es la cantidad exacta de aristas que un Árbol siempre contiene.
+Finalmente, se calcula y se devuelve al usuario el peso total de las aristas que forman el Arbol Generador Minimo, junto con la lista de dichas aristas
 
 ## Resultados
 
 Al usar el codigo creado en `prim.py` se obtiene el siguente grafo:
 ![Grafo_Prim](imagenes/prim_grafo_01.png)
 
-El cual coincide con el resultado esperado tanto el peso  minimo como el arbol de peso minimo.
+El cual coincide con el resultado esperado.
 
+
+# Algoritmo de Kruskal
+
+```python
+def kruskall(aristas):
+    aristas_kruskall = []
+    conjuntos = []
+    peso_min = 0
+    for arista in aristas:
+        u, v = gt.extraer_vertices(arista)
+
+        conjunto_u = None
+        conjunto_v = None
+        for c in conjuntos:
+            if u in c:
+                conjunto_u = c
+            if v in c:
+                conjunto_v = c
+
+        if conjunto_u is None and conjunto_v is None:
+            conjuntos.append({u, v})
+            aristas_kruskall.append(arista)
+
+        elif conjunto_u is not None and conjunto_v is None:
+            conjunto_u.add(v)
+            aristas_kruskall.append(arista)
+
+        elif conjunto_u is None and conjunto_v is not None:
+            conjunto_v.add(u)
+            aristas_kruskall.append(arista)
+
+        elif conjunto_u != conjunto_v:
+            conjunto_u.update(conjunto_v)
+            conjuntos.remove(conjunto_v)
+            aristas_kruskall.append(arista)
+
+        else:
+            pass
+    for arista in aristas_kruskall:
+        peso_min += gt.extraer_peso(arista)
+
+    return aristas_kruskall, peso_min
+```
+Mediante la función `ordenar_aristas` se ordenan las aristas de menor a mayor por su peso, posteriormente si una arista conecta dos vértices que aún no están en el mismo grupo, 
+se añade al Arbol Generador y sus grupos se unen. Si los vértices ya están en el mismo grupo, la arista se descarta para evitar ciclos. Finalmente, la función devuelve las aristas del arbol y su peso total.
+
+## Resultados:
+Al usar este programa se obtiene:
+![Resultados_Kruskal](imagenes/kruskal_grafo_01.png)
+El cual conicide con los resultados esperados
