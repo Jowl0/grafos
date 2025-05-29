@@ -228,4 +228,9 @@ se añade al Arbol Generador y sus grupos se unen. Si los vértices ya están en
 ## Resultados:
 Al usar este programa se obtiene:
 ![Resultados_Kruskal](imagenes/kruskal_grafo_01.png)
-El cual conicide con los resultados esperados
+El cual conicide con el resultado esperado.
+
+# Problema 2:
+![Problema_2](imagenes/problema_2.png)
+## Respuesta:
+![Respuesta](imagenes/problema_2_respuesta.jpeg)
